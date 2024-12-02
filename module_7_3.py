@@ -21,7 +21,7 @@ class WordsFinder:
            word = word.lower()
            for file_name, words in check_lst.items():
                    if word in words:
-                       lst[file_name] = words.index(word)
+                       lst[file_name] = words.index(word) +1
                    return word, lst
 
     def count(self, word):
