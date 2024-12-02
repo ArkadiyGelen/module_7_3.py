@@ -16,13 +16,13 @@ class WordsFinder:
                 return check_lst
 
     def find(self, word):
-           check_lst = self.get_all_words()
-           lst = {}
-           word = word.lower()
-           for file_name, words in check_lst.items():
-                   if word in words:
-                       lst[file_name] = words.index(word) +1
-                   return word, lst
+        results = {}
+        word_lower = word.lower()
+        all_words = self.get_all_words()
+        for file_name, words in all_words.items():
+            if word_lower in words:
+                results[file_name] = words.index(word_lower) +1
+        return results
 
     def count(self, word):
         check_lst = self.get_all_words()
